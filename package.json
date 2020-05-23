@@ -16,7 +16,7 @@
     "@types/moment-timezone": "^0.2.34",
     "bootstrap": "3.3.6",
     "font-awesome": "4.7.0",
-    "jquery": "2.2.4",
+    "jquery": "3.5.0",
     "jquery-ui": "1.12.1",
     "jquery-waypoints": "^2.0.5",
     "jquery.cookie": "1.4.1",
