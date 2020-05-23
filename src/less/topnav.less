@@ -1,0 +1,90 @@
+
+.navbar-default {
+    background-color: @gray-darkest;
+    border-color: transparent;
+    .navbar-brand {
+        color: @brand-white;
+        &:hover,
+        &:focus,
+        &:active,
+        &.active {
+            color: darken(@brand-secondary, 10%);
+        }
+    }
+    .navbar-collapse {
+        border-color: fade(white, 2%);
+    }
+    .navbar-toggle {
+        background-color: @gray-darkest;
+        border-color: @gray-darkest;
+        .icon-bar {
+            background-color: @brand-primary;
+        }
+        &:hover,
+        &:focus {
+            background-color: @gray-darkest;
+        }
+    }
+    .nav {
+        li {
+            a {
+                font-weight: 400;
+                letter-spacing: 1px;
+                color: @brand-white;
+                &:hover,
+                &:focus {
+                    color: darken(@brand-secondary, 10%);
+                    outline: none;
+                }
+            }
+        }
+    }
+    .navbar-nav>.active>a {
+        border-radius: 0;
+        color: @brand-secondary;
+        background-color: @brand-primary;
+    }
+    .navbar-nav>.active>a:hover,
+    .navbar-nav>.active>a:focus {
+        color: @brand-secondary;
+        background-color: darken(@brand-primary, 10%);
+    }
+}
+
+@media screen and (max-width: 768px) {
+
+    .collapse {
+        visibility: hidden;
+        display: none;
+        &.in {
+            visibility: visible;
+            display: block;
+        }
+    }
+}
+
+.collapsing {
+    overflow: hidden;
+}
+
+@media(min-width:768px) {
+    .navbar-default {
+        background-color: @brand-primary;
+        padding: 25px 0;
+        transition: all 0.3s;
+        border: none;
+        .navbar-brand {
+            font-size: 2em;
+            transition: all 0.3s;
+        }
+        .navbar-nav>.active>a {
+            border-radius: 3px;
+        }
+    }
+    .navbar-default.navbar-shrink {
+        padding: 10px 0;
+        .navbar-brand {
+            font-size: 1.5em;
+        }
+    }
+}

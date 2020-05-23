@@ -1,0 +1,98 @@
+{
+  "rules": {
+    "quotemark": [
+      true,
+      "single"
+    ],
+    "comment-format": [
+      true,
+      "check-space"
+    ],
+    "eofline": true,
+    "class-name": true,
+    "interface-name": true,
+    "curly": true,
+    "forin": true,
+    "indent": [
+      true,
+      4
+    ],
+    "label-position": true,
+    "label-undefined": true,
+    "max-line-length": [
+      true,
+      150
+    ],
+    "use-strict": [
+      true,
+      "check-module",
+      "check-function"
+    ],
+    "ban": true,
+    "jsdoc-format": true,
+    "no-arg": true,
+    "no-bitwise": true,
+    "no-console": [
+      true,
+      "debug",
+      "info",
+      "time",
+      "timeEnd",
+      "trace"
+    ],
+    "no-construct": true,
+    "no-debugger": true,
+    "no-duplicate-key": true,
+    "no-duplicate-variable": true,
+    "no-empty": true,
+    "no-eval": true,
+    "no-string-literal": true,
+    "no-trailing-whitespace": true,
+    "no-unused-variable": false,
+    "no-unreachable": true,
+    "no-use-before-declare": true,
+    "no-var-requires": true,
+    "no-switch-case-fall-through": true,
+    "no-consecutive-blank-lines": true,
+    "one-line": [
+      true,
+      "check-open-brace",
+      "check-catch",
+      "check-else",
+      "check-whitespace"
+    ],
+    "radix": true,
+    "semicolon": true,
+    "triple-equals": [
+      true,
+      "allow-null-check"
+    ],
+    "variable-name": [
+      true,
+      "allow-leading-underscore"
+    ],
+    "whitespace": [
+      true,
+      "check-operator",
+      "check-typecast",
+      "check-type",
+      "check-branch",
+      "check-separator",
+      "check-decl"
+    ],
+    "typedef-whitespace": [
+      true,
+      "parameter",
+      "member-variable-declaractor",
+      "variable-declarator",
+      "index-signature",
+      "call-signature",
+      "property-signature"
+    ]
+  },
+  "member-ordering": [
+    true,
+    "static-before-instance",
+    "variables-before-functions"
+  ]
+}

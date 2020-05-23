@@ -1,0 +1,38 @@
+.checklist {
+    list-style-type: none;
+    padding-left: 0px;
+    .waypoint {
+        i.fa {
+            background-color: @brand-success;
+            display: inline-block;
+            height: 40px;
+            width: 40px;
+            color: @brand-white;
+            border: 1px solid @brand-success;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 40px;
+            font-size: 18px;
+            position: relative;
+            margin-right: 20px;
+            transition: transform 500ms ease-out;
+            transform: translateX(-50px);
+            &::after {
+                content: " ";
+                position: absolute;
+                height: 40px;
+                border-right: 2px solid @brand-secondary;
+                top: 0px;
+                right: -15px;
+            }
+        }
+        &.wp-hit {
+            i.fa {
+                transform: translateX(0px);
+            }
+        }
+    }
+    p {
+        margin-left: 68px;
+    }
+}

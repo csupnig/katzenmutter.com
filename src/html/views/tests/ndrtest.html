@@ -1,0 +1,15 @@
+{% set title = "NDR Futterreportage" %}
+{% set description = "Katzenfutter Rportage ✓ Erfahrungen mit Katzenfutter ✓ Tierärzte Test ✓ Katze richtig füttern ✓" %}
+
+{% extends "../../layout.html" %}
+
+{% block content %}
+
+{{ navigation(false) }}
+<section id="impressum" class="container">
+    <h1>Der große NDR Futtertest</h1>
+    <span>{{mtime|date('Y-m-d') }}</span>
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/mufUeXw26oQ" frameborder="0" allowfullscreen></iframe>
+
+</section>
+{% endblock %}

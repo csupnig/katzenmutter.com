@@ -1,0 +1,16 @@
+article {
+    .article_image {
+        float: right;
+        margin: 15px;
+        border: 1px solid @brand-primary;
+        border-radius: 50%;
+        width: 250px;
+        padding: 10px;
+        .transparentBackgroundColorMixin(0.6, @brand-primary);
+        &.left {
+            float: left;
+            border: 1px solid @brand-secondary;
+            .transparentBackgroundColorMixin(0.6, @brand-secondary);
+        }
+    }
+}

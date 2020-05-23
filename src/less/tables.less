@@ -1,0 +1,23 @@
+table {
+    th.col {
+        text-align: center;
+        img {
+            max-width: 150px;
+            max-height: 80px;
+        }
+    }
+    td {
+        text-align: center;
+        &.star {
+            .fa-star {
+                color: @brand-warning;
+            }
+        }
+        .fa-check {
+            color: @brand-success;
+        }
+        .fa-times {
+            color: @brand-danger;
+        }
+    }
+}
