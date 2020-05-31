@@ -8,3 +8,12 @@ h1.title {
         color: @brand-secondary;
     }
 }
+
+body {
+    line-height: 1.7;
+    @media only screen and (max-width: @screen-sm-max) {
+        h1, h2, h3 {
+            margin-top: 40px;
+        }
+    }
+}

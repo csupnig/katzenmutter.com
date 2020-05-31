@@ -10,6 +10,10 @@
         &.active {
             color: darken(@brand-secondary, 10%);
         }
+        padding: 5px 15px;
+        img {
+            height: 40px;
+        }
     }
     .navbar-collapse {
         border-color: fade(white, 2%);
@@ -86,5 +90,14 @@
         .navbar-brand {
             font-size: 1.5em;
         }
+    }
+}
+@media (min-width: 768px) {
+    .navbar-collapse.collapse {
+        display: block !important;
+        height: auto !important;
+        padding-bottom: 0;
+        overflow: visible !important;
+        visibility: visible;
     }
 }
