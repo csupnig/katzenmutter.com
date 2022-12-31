@@ -63,7 +63,7 @@
     "q": "^1.0.1",
     "run-sequence": "~0.3.6",
     "tiny-lr": "0.0.5",
-    "ts-loader": "^2.3.2",
+    "ts-loader": "^9.4.2",
     "typescript": "2.4.2",
     "yargs": "~1.2.1"
   }
