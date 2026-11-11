@@ -1,0 +1,145 @@
+{
+  "_comment": "ASINs verified on amazon.de 2026-11-11. Food facts = manufacturer declaration / product label (sources in `src`). Never add prices or star ratings (Amazon policy). null = not verified.",
+  "katzenfutter": [
+    {
+      "asin": "B01LTIOD4A",
+      "name": "animonda Carny Adult Rind + Huhn",
+      "pack": "6 × 400 g Dose",
+      "note": "Der Klassiker: Alleinfuttermittel mit 35 % Rind und 30 % Huhn, ohne Zusatz von Getreide und Zucker. Gut verfügbar und in vielen Sorten erhältlich.",
+      "facts": { "meat": "65 % (35 % Rind, 30 % Huhn)", "declared": true, "grainFree": true, "sugarFree": true, "complete": true },
+      "src": ["https://animonda.de/product/carny-adult-rind-huhn/83719-0"]
+    },
+    {
+      "asin": "B0CZ4486BS",
+      "name": "catz finefood Classic Geflügel",
+      "pack": "6 × 400 g Dose",
+      "note": "Alleinfutter mit 69 % Geflügel, laut Hersteller glutenfrei, ohne Getreide und ohne Zuckerzusatz.",
+      "facts": { "meat": "69 % Geflügel", "declared": null, "grainFree": true, "sugarFree": true, "complete": true },
+      "src": ["https://www.catzfinefood.de/nassfutter/classic/adult/"]
+    },
+    {
+      "asin": "B07D4T5XVT",
+      "name": "MjAMjAM Huhn an Möhrchen",
+      "pack": "6 × 400 g Dose",
+      "note": "Monoprotein-Futter mit nur einer Fleischsorte: 72,5 % Huhn (Fleisch, Leber, Herzen) – gut geeignet für Katzen mit empfindlichem Magen.",
+      "facts": { "meat": "72,5 % Huhn", "declared": true, "grainFree": true, "sugarFree": true, "complete": true },
+      "src": ["https://www.amazon.de/dp/B07D4T5XVT"]
+    },
+    {
+      "asin": "B08BSQCS5L",
+      "name": "GranataPet DeliCatessen Huhn PUR",
+      "pack": "6 × 400 g Dose",
+      "note": "Alleinfuttermittel mit 72 % Huhn, ohne Getreide und Zuckerzusätze, ergänzt um Lachsöl und Grünlippmuschel.",
+      "facts": { "meat": "72 % Huhn", "declared": true, "grainFree": true, "sugarFree": true, "complete": true },
+      "src": ["https://www.amazon.de/dp/B08BSQCS5L"]
+    },
+    {
+      "asin": "B07NMMP45T",
+      "name": "Leonardo Geflügel pur",
+      "pack": "6 × 400 g Dose",
+      "note": "Monoprotein-Alleinfutter mit 65 % Geflügel und Geflügelbrühe, laut Hersteller ohne Zucker und Getreide, hergestellt in Deutschland.",
+      "facts": { "meat": "65 % Geflügel", "declared": null, "grainFree": true, "sugarFree": true, "complete": true },
+      "src": ["https://www.leonardo-catfood.de/leonardo-gefluegel-pur-6-x-200-g"]
+    }
+  ],
+  "niere": [
+    {
+      "asin": "B01N0KQVBF",
+      "name": "animonda Integra Protect Niere",
+      "pack": "16 × 100 g Schale",
+      "note": "Diätfuttermittel bei chronischer Niereninsuffizienz mit reduziertem Eiweiß- und Phosphorgehalt. Nur nach Rücksprache mit der Tierärztin bzw. dem Tierarzt."
+    },
+    {
+      "asin": "B07NVGGR7B",
+      "name": "Royal Canin Veterinary Renal",
+      "pack": "48 × 85 g Beutel",
+      "note": "Diät-Alleinfuttermittel mit stark reduziertem Phosphorgehalt zur Unterstützung der Nierenfunktion. Nur nach Rücksprache mit der Tierärztin bzw. dem Tierarzt."
+    },
+    {
+      "asin": "B007BNZZ3G",
+      "name": "Hill's Prescription Diet k/d",
+      "pack": "12 × 85 g Beutel",
+      "note": "Diät-Nassfutter mit Huhn zur Unterstützung der Nierenfunktion. Nur nach Rücksprache mit der Tierärztin bzw. dem Tierarzt."
+    },
+    {
+      "asin": "B08MW1KX68",
+      "name": "Catit Trinkbrunnen Edelstahl",
+      "pack": "3 Liter",
+      "badge": "Zubehör",
+      "note": "Bewegtes Wasser regt viele Katzen zum Trinken an. Edelstahl-Aufsatz (spülmaschinengeeignet), drei Durchflussstufen, Dreifachfilter."
+    }
+  ],
+  "balkon": [
+    {
+      "asin": "B000V6K5VM",
+      "name": "TRIXIE Schutznetz drahtverstärkt",
+      "pack": "8 × 3 m, olivgrün",
+      "note": "Für den unteren Bereich: Der eingearbeitete Draht verhindert Durchbeißen und Durchkratzen. Lässt sich zuschneiden."
+    },
+    {
+      "asin": "B0009587YM",
+      "name": "TRIXIE Schutznetz transparent",
+      "pack": "8 × 3 m",
+      "note": "Für die oberen Bereiche: transparent, UV-beständig und von innen kaum sichtbar."
+    },
+    {
+      "asin": "B000V9IVPG",
+      "name": "TRIXIE Spannstange",
+      "pack": "1,28–3,20 m",
+      "badge": "Ohne Bohren",
+      "note": "Verstellbare Aluminium-Stange, die zwischen Boden und Decke (oder Wand und Wand) geklemmt wird – ideal für Mietwohnungen."
+    }
+  ],
+  "staubundhaare": [
+    {
+      "asin": "B0DRFRJPWY",
+      "name": "eufy C10",
+      "badge": "Einstieg",
+      "note": "Sehr flacher Saugroboter (7,2 cm), kommt auch unter Sofas. Mit Absaugstation, die den Staubbehälter automatisch entleert."
+    },
+    {
+      "asin": "B0GHN9DR1C",
+      "name": "roborock Qrevo S Pro",
+      "badge": "Mittelklasse",
+      "note": "Saug- und Wischroboter mit LiDAR-Navigation und Gummi-Hauptbürste mit Anti-Tangle-System gegen verhedderte Tierhaare."
+    },
+    {
+      "asin": "B0GSWYM8Q2",
+      "name": "Dreame X60 Pro Ultra Complete",
+      "badge": "Premium",
+      "note": "Oberklasse-Roboter mit Entwirrungs-Doppelbürste für lange Haare und Station, die Wischmopps heiß reinigt und den Behälter entleert."
+    },
+    {
+      "asin": "B0C2FMZMHP",
+      "name": "ChomChom Roller",
+      "badge": "Für Sofa & Kleidung",
+      "note": "Wiederverwendbarer Tierhaarentferner ohne Klebeband – die Haare landen beim Hin- und Herrollen in einem Auffangbehälter."
+    }
+  ],
+  "erziehung": [
+    {
+      "asin": "3440142841",
+      "name": "Birga Dexel: Clickertraining für Katzen",
+      "pack": "Buch, Kosmos",
+      "note": "Praxisbuch der Katzenverhaltensberaterin Birga Dexel: Schritt für Schritt zum Training mit dem Clicker."
+    },
+    {
+      "asin": "3833852151",
+      "name": "300 Fragen zum Katzenverhalten",
+      "pack": "Buch, GU",
+      "note": "Ratgeber von Helga Hofmann, der typische Fragen zum Verhalten von Katzen im Frage-Antwort-Format beantwortet."
+    },
+    {
+      "asin": "3468738226",
+      "name": "Langenscheidt Katze–Deutsch / Deutsch–Katze",
+      "pack": "Buch, Langenscheidt",
+      "note": "Nina Puri „übersetzt“ das Verhalten der Stubentiger – humorvoll und mit vielen Tipps für ein entspanntes Zusammenleben."
+    },
+    {
+      "asin": "3442175291",
+      "name": "Katze – Betriebsanleitung",
+      "pack": "Buch, Goldmann",
+      "note": "Augenzwinkernder Ratgeber im Stil einer Gebrauchsanleitung: wie man eine Katze „in Betrieb nimmt“ und artgerecht „instand hält“."
+    }
+  ]
+}

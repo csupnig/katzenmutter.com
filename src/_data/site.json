@@ -1,0 +1,17 @@
+{
+  "name": "Katzenmutter",
+  "url": "https://katzenmutter.com",
+  "lang": "de",
+  "locale": "de_DE",
+  "amazonTag": "katzenmutter0a-21",
+  "author": "Lena Winter",
+  "email": "admin@katzenmutter.com",
+  "year": 2026,
+  "nav": [
+    { "url": "/tests/katzenfuttertest.html", "title": "Katzenfutter-Vergleich" },
+    { "url": "/ernaehrung.html", "title": "Ernährung" },
+    { "url": "/futter-bei-nierenkrankheit.html", "title": "Nierenkranke Katze" },
+    { "url": "/erziehung.html", "title": "Erziehung" },
+    { "url": "/balkon-katzensicher.html", "title": "Balkon" }
+  ]
+}
