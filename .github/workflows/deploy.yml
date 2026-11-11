@@ -1,0 +1,58 @@
+name: Build & Deploy
+
+on:
+  push:
+    branches: [master]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  id-token: write   # OIDC → AWS, no stored keys
+
+concurrency:
+  group: deploy
+  cancel-in-progress: false
+
+env:
+  AWS_REGION: eu-central-1
+  BUCKET: katzenmutter.com
+  DISTRIBUTION_ID: E1TPQL9QC7XI6Z
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - run: npm run build
+      - run: npm run check
+      - uses: actions/upload-artifact@v4
+        with:
+          name: site
+          path: _site
+
+  deploy:
+    needs: build
+    if: github.event_name != 'pull_request' && github.ref == 'refs/heads/master'
+    runs-on: ubuntu-latest
+    environment: production
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          name: site
+          path: _site
+      - uses: aws-actions/configure-aws-credentials@v4
+        with:
+          role-to-assume: arn:aws:iam::725308806326:role/github-katzenmutter-deploy
+          aws-region: ${{ env.AWS_REGION }}
+      - name: Upload assets (long cache)
+        run: aws s3 sync _site s3://$BUCKET --delete --exclude "*.html" --exclude "*.xml" --exclude "*.txt" --cache-control "public, max-age=604800"
+      - name: Upload pages (short cache)
+        run: aws s3 sync _site s3://$BUCKET --delete --exclude "*" --include "*.html" --include "*.xml" --include "*.txt" --cache-control "public, max-age=300"
+      - name: Invalidate CloudFront
+        run: aws cloudfront create-invalidation --distribution-id $DISTRIBUTION_ID --paths "/*"

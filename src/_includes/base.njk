@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="{{ site.lang }}">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ title }}{% if not homepage %} | {{ site.name }}{% endif %}</title>
+  <meta name="description" content="{{ description }}">
+  <link rel="canonical" href="{{ canonical }}">
+  {% if noindex %}<meta name="robots" content="noindex, follow">{% endif %}
+  <meta property="og:type" content="{% if homepage %}website{% else %}article{% endif %}">
+  <meta property="og:site_name" content="{{ site.name }}">
+  <meta property="og:locale" content="{{ site.locale }}">
+  <meta property="og:title" content="{{ title }}">
+  <meta property="og:description" content="{{ description }}">
+  <meta property="og:url" content="{{ canonical }}">
+  <meta property="og:image" content="{{ site.url }}{{ image or '/assets/katze_jung.jpg' }}">
+  <link rel="icon" type="image/png" href="/assets/favicon.png">
+  <link rel="stylesheet" href="/css/main.css">
+  <script type="application/ld+json">
+  {%- if homepage %}
+  {"@context":"https://schema.org","@type":"WebSite","name":{{ site.name | dump | safe }},"url":{{ site.url | dump | safe }},"inLanguage":"de"}
+  {%- else %}
+  {"@context":"https://schema.org","@graph":[
+    {"@type":"Article","headline":{{ (headline or title) | dump | safe }},"description":{{ description | dump | safe }},
+     "inLanguage":"de","mainEntityOfPage":{{ canonical | dump | safe }},
+     {% if updated %}"dateModified":"{{ updated | isoDate }}",{% endif %}{% if published %}"datePublished":"{{ published | isoDate }}",{% endif %}
+     "author":{"@type":"Person","name":{{ site.author | dump | safe }},"url":"{{ site.url }}/impressum.html"},
+     "publisher":{"@type":"Organization","name":{{ site.name | dump | safe }},"url":{{ site.url | dump | safe }},"logo":{"@type":"ImageObject","url":"{{ site.url }}/assets/logo.png"}}},
+    {"@type":"BreadcrumbList","itemListElement":[
+      {"@type":"ListItem","position":1,"name":"Startseite","item":"{{ site.url }}/"},
+      {"@type":"ListItem","position":2,"name":{{ (breadcrumb or title) | dump | safe }},"item":{{ canonical | dump | safe }}}]}
+  ]}
+  {%- endif %}
+  </script>
+</head>
+<body>
+<a class="skip" href="#inhalt">Zum Inhalt springen</a>
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="/"><img src="/assets/logo.png" width="235" height="67" alt="Katzenmutter – Startseite"></a>
+    <nav aria-label="Hauptnavigation">
+      <ul class="nav">
+        {%- for item in site.nav %}
+        <li><a href="{{ item.url }}"{% if page.url == item.url %} aria-current="page"{% endif %}>{{ item.title }}</a></li>
+        {%- endfor %}
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="inhalt" class="wrap">
+  <article class="content">
+    {% if affiliate !== false %}
+    <p class="ad-label"><strong>Werbung</strong> – Diese Seite enthält Affiliate-Links (mit * markiert). Kaufst du darüber ein, erhalten wir eine kleine Provision; für dich ändert sich der Preis nicht. <a href="/impressum.html#affiliate">Mehr dazu</a></p>
+    {% endif %}
+    {% if updated and not homepage %}<p class="meta">Zuletzt aktualisiert: <time datetime="{{ updated | isoDate }}">{{ updated | deDate }}</time></p>{% endif %}
+    {{ content | safe }}
+    {% if vetNote %}
+    <aside class="note vet"><strong>Hinweis:</strong> Dieser Artikel ersetzt keine tierärztliche Beratung. Bei gesundheitlichen Problemen deiner Katze wende dich bitte an deine Tierärztin oder deinen Tierarzt.</aside>
+    {% endif %}
+  </article>
+
+  {% if related %}
+  <aside class="related" aria-labelledby="related-h">
+    <h2 id="related-h">Weiterlesen</h2>
+    <ul>
+      {%- for r in related %}
+      {%- set rp = collections.all | selectattr("url", "equalto", r) | first %}
+      {%- if rp %}<li><a href="{{ rp.url }}">{{ rp.data.breadcrumb or rp.data.title }}</a></li>{% endif %}
+      {%- endfor %}
+    </ul>
+  </aside>
+  {% endif %}
+</main>
+
+<footer class="site-footer">
+  <div class="wrap footer-inner">
+    <p class="disclosure">* Affiliate-Link / Werbung. Als Amazon-Partner verdiene ich an qualifizierten Verkäufen.</p>
+    <nav aria-label="Rechtliches">
+      <a href="/impressum.html">Impressum</a> ·
+      <a href="/impressum.html#datenschutz">Datenschutz</a>
+    </nav>
+    <p>&copy; {{ site.year }} katzenmutter.com</p>
+  </div>
+</footer>
+<script src="/js/main.js" defer></script>
+</body>
+</html>

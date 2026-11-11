@@ -1,0 +1,38 @@
+{#- Product cards. Usage:
+    {% from "products.njk" import cards with context %}
+    {{ cards(products.katzenfutter) }}
+-#}
+{% macro cards(items) %}
+<div class="products">
+  {%- for p in items %}
+  <section class="product">
+    {% if p.badge %}<span class="badge">{{ p.badge }}</span>{% endif %}
+    <h3>{{ p.name }}</h3>
+    {% if p.pack %}<p class="pack">{{ p.pack }}</p>{% endif %}
+    <p>{{ p.note }}</p>
+    {% if p.points %}<ul>{% for pt in p.points %}<li>{{ pt }}</li>{% endfor %}</ul>{% endif %}
+    <a class="btn" href="{{ p.asin | amazonLink(amazonTag or site.amazonTag) }}" rel="sponsored nofollow noopener" target="_blank">Bei Amazon ansehen*</a>
+  </section>
+  {%- endfor %}
+</div>
+{% endmacro %}
+
+{#- Comparison table for food: facts come from manufacturer declarations; null = not verified -#}
+{% macro yn(v) %}{% if v === true %}<td class="y">✓ ja</td>{% elif v === false %}<td class="n">✗ nein</td>{% else %}<td class="u">k.&nbsp;A.</td>{% endif %}{% endmacro %}
+{% macro factsTable(items) %}
+<div class="table-wrap">
+<table>
+  <thead><tr><th scope="col">Kriterium</th>{% for p in items %}<th scope="col">{{ p.name }}</th>{% endfor %}</tr></thead>
+  <tbody>
+    <tr><th scope="row">Fleisch / tierische Anteile</th>{% for p in items %}<td>{{ p.facts.meat or "k. A." }}</td>{% endfor %}</tr>
+    <tr><th scope="row">Tierarten genau deklariert</th>{% for p in items %}{{ yn(p.facts.declared) }}{% endfor %}</tr>
+    <tr><th scope="row">Getreidefrei</th>{% for p in items %}{{ yn(p.facts.grainFree) }}{% endfor %}</tr>
+    <tr><th scope="row">Ohne Zuckerzusatz</th>{% for p in items %}{{ yn(p.facts.sugarFree) }}{% endfor %}</tr>
+    <tr><th scope="row">Alleinfuttermittel</th>{% for p in items %}{{ yn(p.facts.complete) }}{% endfor %}</tr>
+    <tr><th scope="row">Packung</th>{% for p in items %}<td>{{ p.pack or "–" }}</td>{% endfor %}</tr>
+    <tr><th scope="row"></th>{% for p in items %}<td><a class="btn" href="{{ p.asin | amazonLink(amazonTag or site.amazonTag) }}" rel="sponsored nofollow noopener" target="_blank">Ansehen*</a></td>{% endfor %}</tr>
+  </tbody>
+</table>
+</div>
+<p class="meta">Angaben laut Hersteller bzw. Produktetikett, Stand {{ updated | deDate }}. „k. A.“ = keine eindeutige Angabe gefunden. Rezepturen können sich ändern – maßgeblich ist das Etikett auf der Packung.</p>
+{% endmacro %}
